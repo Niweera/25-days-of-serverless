@@ -1,0 +1,128 @@
+openapi: 3.0.1
+info:
+  version: "1.00"
+  title: 25 Days of Serverless
+  description: Microsoft's 25 Days of Serverless challenge but with Google Cloud Functions for Firebase
+  contact:
+    name: Nipuna Weerasekara
+    email: w.nipuna@gmail.com
+    url: "https://niweera.gq/"
+servers:
+  - url: "https://us-central1-fsuptutorial.cloudfunctions.net/api/"
+    description: Production server
+tags:
+  - name: READ operations
+paths:
+  /:
+    get:
+      tags:
+        - READ operations
+      description: Get all endpoints
+      operationId: rootEndPoint
+      parameters: []
+      responses:
+        "200":
+          description: All endpoints are returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RootEndPoints"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+  /one:
+    get:
+      tags:
+        - READ operations
+      description: Get the Day One Challenge
+      operationId: dayOneChallenge
+      parameters: []
+      responses:
+        "200":
+          description: Return the Day One Challenge
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DayOneChallenge"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+  /api-docs/:
+    get:
+      tags:
+        - READ operations
+      description: API Documentation
+      operationId: apiDocumentation
+      parameters: []
+      responses:
+        "200":
+          description: API Documentation is returned
+          content:
+            text/html:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+components:
+  schemas:
+    RootEndPoints:
+      type: object
+      properties:
+        rootEndPoint:
+          type: string
+          example: /
+        dayOneChallenge:
+          type: string
+          example: /one
+        apiDocumentation:
+          type: string
+          example: /api-docs
+      description: Root Endpoints of Bug Zero API
+      example:
+        rootEndPoint: /
+        dayOneChallenge: /one
+        apiDocumentation: /api-docs
+    DayOneChallenge:
+      type: object
+      properties:
+        letter:
+          type: string
+          example: "ש"
+      description: The letter
+      example:
+        letter: "ש"
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        stack:
+          type: string
+      example:
+        message: Internal Server Error
+        code: internal
+        name: Internal Server Error
+        stack: stack
