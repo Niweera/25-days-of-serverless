@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Deploy to Firebase
-        run: cd ./functions && firebase deploy --only functions
+        run: cd ./functions && npm install firebase-tools firebase-cli && firebase deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
