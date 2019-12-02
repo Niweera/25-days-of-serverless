@@ -13,7 +13,7 @@ const options = {
   customfavIcon:
     "https://firebasestorage.googleapis.com/v0/b/fsuptutorial.appspot.com/o/favicon.ico?alt=media&token=277f789e-d594-498c-a9fc-bf085b6cf002"
 };
-const swaggerDocument = YAML.load("./Swagger/openapi.yaml");
+const swaggerDocument = YAML.load("../functions/Swagger/openapi.yaml");
 app.use(
   "/api-docs",
   swaggerUi.serve,
@@ -21,7 +21,7 @@ app.use(
 );
 
 //routes
-const main = require("./api/main");
+const main = require("../functions/api/main");
 
 app.use("/", main);
 

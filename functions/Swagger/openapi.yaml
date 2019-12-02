@@ -40,16 +40,16 @@ paths:
     get:
       tags:
         - READ operations
-      description: Get the Day One Challenge
-      operationId: dayOneChallenge
+      description: Get the Challenge One
+      operationId: challengeOne
       parameters: []
       responses:
         "200":
-          description: Return the Day One Challenge
+          description: Return the Challenge One Answer
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DayOneChallenge"
+                $ref: "#/components/schemas/challengeOne"
         "500":
           description: Internal Server Error
           content:
@@ -90,7 +90,7 @@ components:
         rootEndPoint:
           type: string
           example: /
-        dayOneChallenge:
+        challengeOne:
           type: string
           example: /one
         apiDocumentation:
@@ -99,9 +99,9 @@ components:
       description: Root Endpoints of Bug Zero API
       example:
         rootEndPoint: /
-        dayOneChallenge: /one
+        challengeOne: /one
         apiDocumentation: /api-docs
-    DayOneChallenge:
+    challengeOne:
       type: object
       properties:
         letter:

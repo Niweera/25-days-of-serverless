@@ -9,14 +9,14 @@ const router = express.Router();
 router.get("/", (req, res) => {
   return res.status(200).json({
     rootEndPoint: "/",
-    dayOneChallenge: "/one",
+    challengeOne: "/one",
     apiDocumentation: "/api-docs/"
   });
 });
 
 /**
  * @route GET /one
- * @desc Day one challenge
+ * @desc Challenge one
  * @access Public
  */
 router.get("/one", (req, res) => {
@@ -48,7 +48,7 @@ router.get("/one", (req, res) => {
           letter = "ש";
           break;
       }
-      console.log(ipAddress, number, randomNumber, letter);
+
       return res.status(200).send({ letter: letter });
     } catch (error) {
       console.log(error);
