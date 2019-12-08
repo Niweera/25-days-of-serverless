@@ -16,18 +16,18 @@ API EndPoint: [`https://us-central1-fsuptutorial.cloudfunctions.net/api/one`](ht
 
 ## Challenge Two:
 
-__Prerequisites__
+**Prerequisites**
 
 1. [PushBullet](https://www.pushbullet.com) API KEY (To send push messages)
 2. Firebase Blaze Plan (To use Google Cloud Pub/Sub)
 
 #### PoC
 
-![image](img/Annotation 2019-12-08 113019.jpg)
-![image](img/Annotation 2019-12-08 113113.jpg)
-![image](img/Annotation 2019-12-08 113212.jpg)
-![image](img/Annotation 2019-12-08 113311.jpg)
-![image](img/Annotation 2019-12-08 113411.jpg)
-![image](img/Annotation 2019-12-08 113511.jpg)
-![image](img/Annotation 2019-12-08 113610.jpg)
-![image](img/Annotation 2019-12-08 113711.jpg)
+![image](/img/1.jpg)
+![image](/img/2.jpg)
+![image](/img/3.jpg)
+![image](/img/4.jpg)
+![image](/img/5.jpg)
+![image](/img/6.jpg)
+![image](/img/7.jpg)
+![image](/img/8.jpg)
