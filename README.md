@@ -1,4 +1,4 @@
-# 25-days-of-serverless
+# 25 Days of Serverless
 
 [Microsoft's 25 Days of Serverless Challenge](https://github.com/microsoft/25-days-of-serverless) but with Google Cloud Functions
 
