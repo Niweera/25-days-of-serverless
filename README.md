@@ -31,3 +31,13 @@ API EndPoint: [`https://us-central1-fsuptutorial.cloudfunctions.net/api/one`](ht
 ![image](/img/6.jpg)
 ![image](/img/7.jpg)
 ![image](/img/8.jpg)
+
+## Challenge Three
+
+**Prerequisites**
+
+1. Firebase Blaze Plan
+
+#### PoC
+
+![image](/img/challenge_3.jpg)
