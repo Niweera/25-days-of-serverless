@@ -23,12 +23,13 @@ app.use(
 
 //routes
 const main = require("./api/main");
+const challengeFour = require("./api/ChallengeFour/challengeFour");
 
 app.use("/", main);
+app.use("/four", challengeFour);
 
 exports.api = functions.https.onRequest(app);
 //++++++++++++++++++++API+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
 //+++++++++++++++++++++++++++++++Challenge Two - The Scheduler app++++++++++++++++++++++
 const tasks = require("./ChallengeTwo");

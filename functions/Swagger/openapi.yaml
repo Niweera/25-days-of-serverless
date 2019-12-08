@@ -59,6 +59,121 @@ paths:
               example:
                 message: Internal Server Error
                 code: internal
+  /four:
+    get:
+      tags:
+        - READ operations
+      description: Get the Challenge Four
+      operationId: challengeFour
+      parameters: []
+      responses:
+        "200":
+          description: Return the Challenge One Answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/challengeOne"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+  /four/add:
+    post:
+      tags:
+        - CREATE operations
+      description: Add new Dish to the Database
+      operationId: challengeFour_create
+      parameters: []
+      responses:
+        "200":
+          description: Return the Challenge One Answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/challengeOne"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+  /four/list:
+    get:
+      tags:
+        - READ operations
+      description: List all dishes from the Database
+      operationId: challengeFour_read
+      parameters: []
+      responses:
+        "200":
+          description: Return the Challenge One Answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/challengeOne"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+  /four/change:
+    patch:
+      tags:
+        - UPDATE operations
+      description: List all dishes from the Database
+      operationId: challengeFour_update
+      parameters: []
+      responses:
+        "200":
+          description: Return the Challenge One Answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/challengeOne"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
+  /four/remove:
+    delete:
+      tags:
+        - DELETE operations
+      description: List all dishes from the Database
+      operationId: challengeFour_delete
+      parameters: []
+      responses:
+        "200":
+          description: Return the Challenge One Answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/challengeOne"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                message: Internal Server Error
+                code: internal
   /api-docs/:
     get:
       tags:

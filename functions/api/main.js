@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   return res.status(200).json({
     rootEndPoint: "/",
     challengeOne: "/one",
+    challengeFour: "/four",
     apiDocumentation: "/api-docs/"
   });
 });
@@ -54,7 +55,7 @@ router.get("/one", (req, res) => {
       return res.status(200).send({ letter: letter });
     } catch (error) {
       console.log(error);
-      return res.status(500).send(error);
+      return res.status(500).send({ message: error });
     }
   })();
 });
@@ -144,6 +145,16 @@ router.post("/three", (req, res) => {
       return res.status(500).send({ message: error });
     }
   })();
+});
+
+// @route   GET /*
+// @desc    Return 404 for all unidentified routes
+// @access  Public
+const fourNaughtFour = {
+  message: "not-found"
+};
+router.get("*", (req, res) => {
+  res.status(404).json(fourNaughtFour);
 });
 
 module.exports = router;
