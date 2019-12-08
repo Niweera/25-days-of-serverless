@@ -1,6 +1,6 @@
 # 25-days-of-serverless
 
-Microsoft's 25 Days of Serverless but with Google Cloud Functions
+[Microsoft's 25 Days of Serverless Challenge](https://github.com/microsoft/25-days-of-serverless) but with Google Cloud Functions
 
 API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-docs/
 
