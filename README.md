@@ -54,6 +54,8 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 
 ## Challenge Four
 
+API EndPoints are secured with Firebase Authentication. 
+
 ### PoC
 
 ### Paths
