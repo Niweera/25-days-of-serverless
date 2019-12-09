@@ -73,13 +73,103 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 | `PATCH`  | `/change`   | Private | Update the food items in the database.   | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/change`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/change)     |
 | `DELETE` | `/remove`   | Private | Delete the food items from the database. | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/remove`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/remove)     |
 
-Refer the [API Docs](https://us-central1-fsuptutorial.cloudfunctions.net/api/api-docs/) for more information.
-
 Database
 
 ![image](/img/challenge_4_1.jpg)
 
-List:
+Register
+
+Send a POST request:
+
+`Request Body Payload`
+
+```json
+{
+  "email": "EMAIL",
+  "password": "PASSWORD",
+  "returnSecureToken": true
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "idToken": "ID_TOKEN",
+  "email": "EMAIL",
+  "refreshToken": "REFRESH_TOKEN",
+  "expiresIn": "EXPIRES_IN_TIME",
+  "localId": "LOCAL_ID"
+}
+```
+
+Login
+
+Send a POST request:
+
+`Request Body Payload`
+
+```json
+{
+  "email": "EMAIL",
+  "password": "PASSWORD",
+  "returnSecureToken": true
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "idToken": "ID_TOKEN",
+  "email": "EMAIL",
+  "refreshToken": "REFRESH_TOKEN",
+  "expiresIn": "EXPIRES_IN_TIME",
+  "localId": "LOCAL_ID",
+  "registered": true
+}
+```
+
+Create a Food Item
+
+Send a POST request:
+
+`Request Header`
+
+```http request
+Authorization: Bearer ID_TOKEN
+```
+
+`Request Body Payload`
+
+```json
+{
+  "dish_name": "DISH_NAME",
+  "type": "TYPE",
+  "amount": "AMOUNT"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "message": "successfully added",
+  "documentID": "DOCUMENT_ID"
+}
+```
+
+List Food Items
+
+Send a GET request:
+
+`Request Header`
+
+```http request
+Authorization: Bearer ID_TOKEN
+```
+
+`Response Payload`
 
 ```json
 {
@@ -93,5 +183,60 @@ List:
       "dish_name": "Kokis"
     }
   ]
+}
+```
+
+Update a Food Item
+
+Send a PATCH request:
+
+`Request Header`
+
+```http request
+Authorization: Bearer ID_TOKEN
+```
+
+`Request Body Payload`
+
+```json
+{
+  "dish_name": "DISH_NAME",
+  "type": "TYPE",
+  "amount": "AMOUNT",
+  "document_id": "DOCUMENT_ID"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "message": "Update successful"
+}
+```
+
+Delete a Food Item
+
+Send a DELETE request:
+
+`Request Header`
+
+```http request
+Authorization: Bearer ID_TOKEN
+```
+
+`Request Body Payload`
+
+```json
+{
+  "document_id": "DOCUMENT_ID"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "message": "Remove successful"
 }
 ```
