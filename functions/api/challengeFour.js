@@ -176,7 +176,7 @@ router.use(decodeIDToken);
 /**
  * @route POST /four/add
  * @desc Add food dishes to the db
- * @access Public
+ * @access Private
  */
 router.post("/add", (req, res) => {
   (async () => {
@@ -186,7 +186,6 @@ router.post("/add", (req, res) => {
 
       /**
        * @type {object} payload - request payload
-       * @property {string} name - name of the requester
        * @property {string} dish_name - name of the dish
        * @property {string} type - type of the dish
        * @property {string} amount - amount of food dish will be brought
@@ -206,7 +205,7 @@ router.post("/add", (req, res) => {
       if (!dish_name || !type || !amount) {
         return res.status(400).send({
           code: "bad-request",
-          message: "Dish name, type of the dish and the amount is required!"
+          message: "Dish name, type of the dish and the amount are required!"
         });
       }
 
@@ -221,6 +220,177 @@ router.post("/add", (req, res) => {
       return res
         .status(200)
         .send({ message: "successfully added", documentID: docRef.id });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send({ message: error });
+    }
+  })();
+});
+
+/**
+ * @route GET /four/list
+ * @desc Read the food dishes
+ * @access Private
+ */
+router.get("/list", (req, res) => {
+  (async () => {
+    try {
+      const querySnapshot = await db.collection("potluck_food").get();
+      const food_items_count = querySnapshot.size;
+      const food =
+        querySnapshot.empty || food_items_count <= 0
+          ? []
+          : querySnapshot.docs.map(foodItem => {
+              return foodItem.data();
+            });
+
+      return res
+        .status(200)
+        .send({ food_item_count: food_items_count, data: food });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send({ message: error });
+    }
+  })();
+});
+
+/**
+ * @route PATCH /four/change
+ * @desc Change the data in db
+ * @access Private
+ */
+router.patch("/change", (req, res) => {
+  (async () => {
+    try {
+      const uid = req.user.uid;
+      const email = req.user.email;
+
+      /**
+       * @type {object} payload - request payload
+       * @property {string} dish_name - name of the dish
+       * @property {string} type - type of the dish
+       * @property {string} amount - amount of food dish will be brought
+       * @property {string} document_id - DocumentID of the food item to be changed
+       */
+
+      const payload = req.body;
+      const document_id = payload.document_id;
+      const dish_name = payload.dish_name;
+      const type = payload.type;
+      const amount = payload.amount;
+
+      if (!payload) {
+        return res.status(400).send({
+          code: "bad-request",
+          message: "Payload is required!"
+        });
+      }
+
+      if (!document_id) {
+        return res.status(400).send({
+          code: "bad-request",
+          message: "document_id is required!"
+        });
+      }
+
+      if (!dish_name && !type && !amount) {
+        return res.status(400).send({
+          code: "bad-request",
+          message: "Dish name, type of the dish or the amount is required!"
+        });
+      }
+
+      const docSnapshot = await db
+        .collection("potluck_food")
+        .doc(document_id)
+        .get();
+
+      if (!docSnapshot.exists) {
+        return res.status(404).send({
+          code: "not-found",
+          message: "The document is not found"
+        });
+      }
+
+      const document_uid = docSnapshot.get("uid");
+
+      if (uid !== document_uid) {
+        return res.status(403).send({
+          code: "unauthorized",
+          message: "Permission denied"
+        });
+      }
+
+      await docSnapshot.ref.update({
+        dish_name: dish_name ? dish_name : docSnapshot.get("dish_name"),
+        type: type ? type : docSnapshot.get("type"),
+        amount: amount ? amount : docSnapshot.get("amount")
+      });
+
+      return res.status(200).send({ message: "Update successful" });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send({ message: error });
+    }
+  })();
+});
+
+/**
+ * @route DELETE /four/remove
+ * @desc delete the data in db
+ * @access Private
+ */
+router.delete("/remove", (req, res) => {
+  (async () => {
+    try {
+      const uid = req.user.uid;
+
+      /**
+       * @type {object} payload - request payload
+       * @property {string} document_id - DocumentID of the food item to be changed
+       */
+
+      const payload = req.body;
+      const document_id = payload.document_id;
+
+      if (!payload) {
+        return res.status(400).send({
+          code: "bad-request",
+          message: "Payload is required!"
+        });
+      }
+
+      if (!document_id) {
+        return res.status(400).send({
+          code: "bad-request",
+          message: "document_id is required!"
+        });
+      }
+
+      const docSnapshot = await db
+        .collection("potluck_food")
+        .doc(document_id)
+        .get();
+
+      if (!docSnapshot.exists) {
+        return res.status(404).send({
+          code: "not-found",
+          message: "The document is not found"
+        });
+      }
+
+      const document_uid = docSnapshot.get("uid");
+
+      if (uid !== document_uid) {
+        return res.status(403).send({
+          code: "unauthorized",
+          message: "Permission denied"
+        });
+      }
+
+      await docSnapshot.ref.delete();
+
+      return res.status(200).send({ message: "Remove successful" });
     } catch (error) {
       console.log(error);
       return res.status(500).send({ message: error });
