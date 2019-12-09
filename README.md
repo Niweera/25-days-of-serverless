@@ -6,7 +6,17 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 
 ## Challenge One
 
-API EndPoint: [`https://us-central1-fsuptutorial.cloudfunctions.net/api/one`](https://us-central1-fsuptutorial.cloudfunctions.net/api/one)
+### Paths
+
+| Location  | Endpoint                                                   |
+| :-------- | :--------------------------------------------------------- |
+| Root path | `https://us-central1-fsuptutorial.cloudfunctions.net/api/` |
+
+### HTTP request and query methods
+
+| Method | Endpoint | Description            | Examples                                                             |
+| :----- | :------- | :--------------------- | :------------------------------------------------------------------- |
+| `GET`  | `/one`   | Get the random letter. | [`one`](https://us-central1-fsuptutorial.cloudfunctions.net/api/one) |
 
 ```json
 {
@@ -41,3 +51,30 @@ API EndPoint: [`https://us-central1-fsuptutorial.cloudfunctions.net/api/one`](ht
 #### PoC
 
 ![image](/img/challenge_3.jpg)
+
+## Challenge Four
+
+### PoC
+
+### Paths
+
+| Location  | Endpoint                                                       |
+| :-------- | :------------------------------------------------------------- |
+| Root path | `https://us-central1-fsuptutorial.cloudfunctions.net/api/four` |
+
+### HTTP request and query methods
+
+| Method   | Endpoint    | Access  | Description                              | Examples                                                                                                                                         |
+| :------- | :---------- | :------ | :--------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `POST`   | `/register` | Public  | Register the user in the database.       | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/register`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/register) |
+| `POST`   | `/login`    | Public  | User login.                              | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/login`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/login)       |
+| `POST`   | `/add`      | Private | Create food items in the database.       | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/add`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/add)           |
+| `GET`    | `/list`     | Private | List the food items in the database.     | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/list`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/list)         |
+| `PATCH`  | `/change`   | Private | Update the food items in the database.   | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/change`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/change)     |
+| `DELETE` | `/remove`   | Private | Delete the food items from the database. | [`https://us-central1-fsuptutorial.cloudfunctions.net/api/four/remove`](https://us-central1-fsuptutorial.cloudfunctions.net/api/four/remove)     |
+
+Refer the [API Docs](https://us-central1-fsuptutorial.cloudfunctions.net/api/api-docs/) for more information.
+
+Database 
+
+![image](/img/challenge_4_1.jpg)
