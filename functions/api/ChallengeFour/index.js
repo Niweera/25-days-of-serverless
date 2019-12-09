@@ -70,16 +70,4 @@ router.post("/add", (req, res) => {
   })();
 });
 
-/**
- * @route GET /*
- * @desc Return 404 for all unidentified routes
- * @access Public
- */
-const fourNaughtFour = {
-  message: "not-found"
-};
-router.get("*", (req, res) => {
-  res.status(404).json(fourNaughtFour);
-});
-
 module.exports = router;

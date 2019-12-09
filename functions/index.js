@@ -22,11 +22,15 @@ app.use(
 );
 
 //routes
-const main = require("./api/main");
-const challengeFour = require("./api/ChallengeFour/challengeFour");
+const challengeOne = require("./api/ChallengeOne");
+const challengeThree = require("./api/challengeThree");
+const challengeFour = require("./api/challengeFour");
+const main = require("./api");
 
-app.use("/", main);
+app.use("/one", challengeOne);
+app.use("/three", challengeThree);
 app.use("/four", challengeFour);
+app.use("/", main);
 
 exports.api = functions.https.onRequest(app);
 //++++++++++++++++++++API+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
