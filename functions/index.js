@@ -22,10 +22,10 @@ app.use(
 );
 
 //routes
-const challengeOne = require("./api/ChallengeOne");
+const challengeOne = require("./api/challengeOne");
 const challengeThree = require("./api/challengeThree");
 const challengeFour = require("./api/challengeFour");
-const main = require("./api");
+const main = require("./api/main");
 
 app.use("/one", challengeOne);
 app.use("/three", challengeThree);

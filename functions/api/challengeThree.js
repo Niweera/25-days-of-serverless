@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const db = require("../../keys").db;
+const db = require("../keys").db;
 
 /**
  * @route POST /three

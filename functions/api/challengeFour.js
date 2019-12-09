@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const request = require("request");
-const db = require("../../keys").db;
-const FIREBASE_API_KEY = require("../../keys").FIREBASE_API_KEY;
-const admin = require("../../keys").admin;
+const db = require("../keys").db;
+const FIREBASE_API_KEY = require("../keys").FIREBASE_API_KEY;
+const admin = require("../keys").admin;
 
 const MESSAGE =
   "No Firebase ID token was passed as a Bearer token in the Authorization header. Make sure you authorize your request by providing the following HTTP header: Authorization: Bearer <Firebase ID Token>";
