@@ -75,6 +75,23 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 
 Refer the [API Docs](https://us-central1-fsuptutorial.cloudfunctions.net/api/api-docs/) for more information.
 
-Database 
+Database
 
 ![image](/img/challenge_4_1.jpg)
+
+List:
+
+```json
+{
+  "food_item_count": 1,
+  "data": [
+    {
+      "email": "w.nipuna@gmail.com",
+      "amount": "2 Kg",
+      "type": "Dessert",
+      "uid": "Ua6FZqUXaNNEtLnSfLjmKVIoeaR2",
+      "dish_name": "Kokis"
+    }
+  ]
+}
+```
