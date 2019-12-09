@@ -77,7 +77,7 @@ Database
 
 ![image](/img/challenge_4_1.jpg)
 
-Register
+**Register**
 
 Send a POST request:
 
@@ -103,7 +103,7 @@ Send a POST request:
 }
 ```
 
-Login
+**Login**
 
 Send a POST request:
 
@@ -130,7 +130,7 @@ Send a POST request:
 }
 ```
 
-Create a Food Item
+**Create a Food Item**
 
 Send a POST request:
 
@@ -159,7 +159,7 @@ Authorization: Bearer ID_TOKEN
 }
 ```
 
-List Food Items
+**List Food Items**
 
 Send a GET request:
 
@@ -186,7 +186,7 @@ Authorization: Bearer ID_TOKEN
 }
 ```
 
-Update a Food Item
+**Update a Food Item**
 
 Send a PATCH request:
 
@@ -215,7 +215,7 @@ Authorization: Bearer ID_TOKEN
 }
 ```
 
-Delete a Food Item
+**Delete a Food Item**
 
 Send a DELETE request:
 
