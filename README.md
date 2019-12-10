@@ -4,6 +4,13 @@
 
 API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-docs/
 
+## Table of Contents
+
+- ⭐️[Wk 1 : Challenge 1 : Spin up a Serverless Dreidel ](#challenge-one)
+- ⭐️[Wk 1 : Challenge 2 : Lucy's Dilemma](#challenge-two)
+- ⭐️[Wk 1 : Challenge 3 : Secret Santa's Gifts](#challenge-three)
+- ⭐️[Wk 1 : Challenge 4 : Ezra's Potluck](#challenge-four)
+
 ## Challenge One
 
 ### Paths
