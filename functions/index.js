@@ -25,11 +25,13 @@ app.use(
 const challengeOne = require("./api/challengeOne");
 const challengeThree = require("./api/challengeThree");
 const challengeFour = require("./api/challengeFour");
+//const challengeFive = require("./api/challengeFive");
 const main = require("./api/main");
 
 app.use("/one", challengeOne);
 app.use("/three", challengeThree);
 app.use("/four", challengeFour);
+//app.use("/five", challengeFive);
 app.use("/", main);
 
 exports.api = functions.https.onRequest(app);

@@ -10,6 +10,7 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 - ⭐️[Wk 1 : Challenge 2 : Lucy's Dilemma](#challenge-two)
 - ⭐️[Wk 1 : Challenge 3 : Secret Santa's Gifts](#challenge-three)
 - ⭐️[Wk 1 : Challenge 4 : Ezra's Potluck](#challenge-four)
+- ⭐️[Wk 1 : Challenge 5 : Naughty or Nice](#challenge-five)
 
 ## Challenge One
 
@@ -247,5 +248,107 @@ Authorization: Bearer ID_TOKEN
 ```json
 {
   "message": "Remove successful"
+}
+```
+
+## Challenge Five
+
+Uses Cloud Natural Language API and Cloud Translation API
+
+**Prerequisites**
+
+1. Google Billing Account
+
+### PoC
+
+`Request Body Payload`
+
+```json
+{
+  "who": "Adam",
+  "message": "my little brother is so annoying and stupid"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "who": "Adam",
+  "message": "my little brother is so annoying and stupid",
+  "translation": "my little brother is so annoying and stupid",
+  "detected_language": "en",
+  "sentiment_magnitude": 0.800000011920929,
+  "sentiment_score": -0.800000011920929,
+  "naughty_or_nice": "Naughty"
+}
+```
+
+`Request Body Payload`
+
+```json
+{
+  "who": "Adam",
+  "message": "I really like the bike I got for a present"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "who": "Adam",
+  "message": "I really like the bike I got for a present",
+  "translation": "I really like the bike I got for a present",
+  "detected_language": "en",
+  "sentiment_magnitude": 0.6000000238418579,
+  "sentiment_score": 0.6000000238418579,
+  "naughty_or_nice": "Nice"
+}
+```
+
+`Request Body Payload`
+
+```json
+{
+  "who": "Eva",
+  "message": "Eu odeio limpar meu quarto"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "who": "Eva",
+  "message": "Eu odeio limpar meu quarto",
+  "translation": "I hate cleaning my room",
+  "detected_language": "pt",
+  "sentiment_magnitude": 0.6000000238418579,
+  "sentiment_score": -0.6000000238418579,
+  "naughty_or_nice": "Naughty"
+}
+```
+
+`Request Body Payload`
+
+```json
+{
+  "who": "tracy",
+  "message": "爸爸和圣诞老人​​很相似"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "who": "tracy",
+  "message": "爸爸和圣诞老人​​很相似",
+  "translation": "Dad and Santa are very similar",
+  "detected_language": "zh-CN",
+  "sentiment_magnitude": 0.10000000149011612,
+  "sentiment_score": 0.10000000149011612,
+  "naughty_or_nice": "Nice"
 }
 ```
