@@ -14,14 +14,20 @@
   },
   "dependencies": {
     "@google-cloud/language": "^3.6.3",
+    "@google-cloud/scheduler": "^1.3.3",
     "@google-cloud/translate": "^5.1.1",
+    "body-parser": "^1.19.0",
+    "chrono-node": "^1.3.11",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^8.8.0",
     "firebase-functions": "^3.3.0",
+    "googleapis": "^46.0.0",
+    "moment-timezone": "^0.5.27",
     "path": "^0.12.7",
     "request": "^2.88.0",
     "swagger-ui-express": "^4.1.2",
+    "tsscmp": "^1.0.6",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {

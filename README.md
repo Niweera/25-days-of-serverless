@@ -11,6 +11,7 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 - ⭐️[Wk 1 : Challenge 3 : Secret Santa's Gifts](#challenge-three)
 - ⭐️[Wk 1 : Challenge 4 : Ezra's Potluck](#challenge-four)
 - ⭐️[Wk 1 : Challenge 5 : Naughty or Nice](#challenge-five)
+- ⭐️[Wk 1 : Challenge 6 : Durable Pattern](#challenge-six)
 
 ## Challenge One
 
@@ -352,3 +353,16 @@ Uses Cloud Natural Language API and Cloud Translation API
   "naughty_or_nice": "Nice"
 }
 ```
+
+## Challenge Six
+
+Uses Cloud Scheduler API
+
+**Prerequisites**
+
+1. Google Billing Account
+2. Slack Workspace
+
+### PoC
+
+![image](/img/challenge_six.jpg)
