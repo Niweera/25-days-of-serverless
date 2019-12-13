@@ -472,7 +472,7 @@ Client UI
 
 ## Challenge Nine
 
-Uses `Oktokit/rest.js` and Google Cloud Functions for Firebase
+Uses `octokit/rest.js` and Google Cloud Functions for Firebase
 
 ### PoC
 
