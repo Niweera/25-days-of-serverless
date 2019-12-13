@@ -12,6 +12,7 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 - ⭐️[Wk 1 : Challenge 4 : Ezra's Potluck](#challenge-four)
 - ⭐️[Wk 1 : Challenge 5 : Naughty or Nice](#challenge-five)
 - ⭐️[Wk 1 : Challenge 6 : Durable Pattern](#challenge-six)
+- ⭐️[Wk 1 : Challenge 7 : API Endpoint - Picture Challenge](#challenge-seven)
 
 ## Challenge One
 
@@ -366,3 +367,41 @@ Uses Cloud Scheduler API
 ### PoC
 
 ![image](/img/challenge_six.jpg)
+
+## Challenge Seven
+
+Uses UNSPLASH Picture API with `unsplash-js`
+
+**Prerequisites**
+
+1. Google Billing Account
+2. UNSPLASH Account
+
+### PoC
+
+`Request Body Payload`
+
+```json
+{
+  "query": "gifts"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "imageURLs": [
+    "https://images.unsplash.com/photo-1511885912508-36118d773e55?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1544654187-454deb2b423e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1511895307821-692dc4ad27c5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1448832945950-bc85f82891bd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1528029320621-f02197f47774?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1461092678334-1aa3ab3543ce?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1546813647-30583402ddd7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1544362724-a403d8211f89?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1511953669874-6c617b315332?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0",
+    "https://images.unsplash.com/photo-1573853019548-c38efdbc2f09?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEwNjI0Mn0"
+  ]
+}
+```
