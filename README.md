@@ -14,6 +14,7 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 - ⭐️[Wk 1 : Challenge 6 : Durable Pattern](#challenge-six)
 - ⭐️[Wk 1 : Challenge 7 : API Endpoint - Picture Challenge](#challenge-seven)
 - ⭐️[Wk 2 : Challenge 8 : Build an Incident Status Page](#challenge-eight)
+- ⭐️[Wk 2 : Challenge 9 : Automate Your GitHub Issues with Holiday Magic](#challenge-nine)
 
 ## Challenge One
 
@@ -468,3 +469,11 @@ Authorization: Bearer ID_TOKEN
 Client UI
 
 ![image](http://g.recordit.co/zAd2UR8kan.gif)
+
+## Challenge Eight
+
+Uses `Oktokit/rest.js` and Google Cloud Functions for Firebase
+
+### PoC
+
+![image](/img/challenge_9.jpg)

@@ -16,6 +16,7 @@
     "@google-cloud/language": "^3.6.3",
     "@google-cloud/scheduler": "^1.3.3",
     "@google-cloud/translate": "^5.1.1",
+    "@octokit/rest": "^16.35.0",
     "body-parser": "^1.19.0",
     "chrono-node": "^1.3.11",
     "cors": "^2.8.5",

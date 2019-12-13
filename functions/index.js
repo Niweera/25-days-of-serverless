@@ -28,7 +28,8 @@ const challengeFour = require("./api/challengeFour");
 //const challengeFive = require("./api/challengeFive");
 // const challengeSix = require("./api/ChallengeSix/challengeSix");
 // const challengeSeven = require("./api/challengeSeven");
-const challengeEight = require("./api/challengeEight");
+// const challengeEight = require("./api/challengeEight");
+const challengeNine = require("./api/challengeNine");
 const main = require("./api/main");
 
 app.use("/one", challengeOne);
@@ -37,7 +38,8 @@ app.use("/four", challengeFour);
 //app.use("/five", challengeFive);
 // app.use("/six", challengeSix);
 // app.use("/seven", challengeSeven);
-app.use("/eight", challengeEight);
+// app.use("/eight", challengeEight);
+app.use("/nine", challengeNine);
 app.use("/", main);
 
 exports.api = functions.https.onRequest(app);
