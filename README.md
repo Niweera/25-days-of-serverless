@@ -470,7 +470,7 @@ Client UI
 
 ![image](http://g.recordit.co/zAd2UR8kan.gif)
 
-## Challenge Eight
+## Challenge Nine
 
 Uses `Oktokit/rest.js` and Google Cloud Functions for Firebase
 
