@@ -13,6 +13,7 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 - ⭐️[Wk 1 : Challenge 5 : Naughty or Nice](#challenge-five)
 - ⭐️[Wk 1 : Challenge 6 : Durable Pattern](#challenge-six)
 - ⭐️[Wk 1 : Challenge 7 : API Endpoint - Picture Challenge](#challenge-seven)
+- ⭐️[Wk 2 : Challenge 8 : Build an Incident Status Page](#challenge-eight)
 
 ## Challenge One
 
@@ -405,3 +406,65 @@ Uses UNSPLASH Picture API with `unsplash-js`
   ]
 }
 ```
+
+## Challenge Eight
+
+Uses ReactJS, Google Cloud Firestore for Client UI (with realtime data updates) and Google Firebase Functions (Uses Firebase Auth for API PATCH requests)
+
+### PoC
+
+**Update Delivery System Status**
+
+Send a PATCH request:
+
+`Request Header`
+
+```http request
+Authorization: Bearer ID_TOKEN
+```
+
+`Request Body Payload`
+
+```json
+{
+  "status": "STATUS"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "message": "Update successful"
+}
+```
+
+**Update ReinDeer Guidance System Status**
+
+Send a PATCH request:
+
+`Request Header`
+
+```http request
+Authorization: Bearer ID_TOKEN
+```
+
+`Request Body Payload`
+
+```json
+{
+  "status": "STATUS"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "message": "Update successful"
+}
+```
+
+Client UI
+
+![image](http://g.recordit.co/zAd2UR8kan.gif)
