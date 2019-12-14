@@ -15,6 +15,8 @@ API Documentation https://us-central1-fsuptutorial.cloudfunctions.net/api/api-do
 - ⭐️[Wk 1 : Challenge 7 : API Endpoint - Picture Challenge](#challenge-seven)
 - ⭐️[Wk 2 : Challenge 8 : Build an Incident Status Page](#challenge-eight)
 - ⭐️[Wk 2 : Challenge 9 : Automate Your GitHub Issues with Holiday Magic](#challenge-nine)
+- ⭐️[Wk 2 : Challenge 10 : Timer Trigger](#challenge-ten)
+- ⭐️[Wk 2 : Challenge 11 : Database Trigger](#challenge-eleven)
 
 ## Challenge One
 
@@ -477,3 +479,89 @@ Uses `octokit/rest.js` and Google Cloud Functions for Firebase
 ### PoC
 
 ![image](/img/challenge_9.jpg)
+
+## Challenge Ten
+
+Still waiting for [Twitter](https://twitter.com) to review my [Twitter](https://twitter.com) developer account application.
+
+## Challenge Eleven
+
+Uses Google Cloud Firestore and Algolia for full text search support
+
+### PoC
+
+**Send a request**
+
+```http request
+POST /add
+```
+
+`Request Body Payload`
+
+```json
+{
+  "description": "I want a Tesla",
+  "name": "Nipuna Weerasekara",
+  "address": "Bad Route Rd, Terry, Mt 59349",
+  "type": "Car"
+}
+```
+
+`Response Payload`
+
+```json
+{
+  "message": "successfully added",
+  "documentID": "DOCUMENT_ID"
+}
+```
+
+**Get all requests by Santa**
+
+```http request
+GET /list
+```
+
+`Response Payload`
+
+```json
+{
+  "requests_count": 2,
+  "data": [
+    {
+      "description": "I want a Tesla",
+      "name": "Nipuna Weerasekara",
+      "address": "Bad Route Rd, Terry, Mt 59349",
+      "type": "Car"
+    },
+    {
+      "description": "I want a Baby Yoda action figure",
+      "name": "The Mandalorian",
+      "address": "234, Millennium Falcon",
+      "type": "Toy"
+    }
+  ]
+}
+```
+
+**Query a specific request by a keyword**
+
+```http request
+GET /find/:query | /find/car
+```
+
+`Response Payload`
+
+```json
+{
+  "hits_count": 1,
+  "data": [
+    {
+      "description": "I want a Tesla",
+      "name": "Nipuna Weerasekara",
+      "address": "Bad Route Rd, Terry, Mt 59349",
+      "type": "Car"
+    }
+  ]
+}
+```

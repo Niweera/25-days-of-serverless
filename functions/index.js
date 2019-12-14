@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
+const algoliaAdminClient = require("./keys").algoliaAdminClient;
+const ALGOLIA_INDEX_NAME = require("./keys").ALGOLIA_INDEX_NAME;
 
 //++++++++++++++++++++API+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const app = express();
@@ -29,7 +31,8 @@ const challengeFour = require("./api/challengeFour");
 // const challengeSix = require("./api/ChallengeSix/challengeSix");
 // const challengeSeven = require("./api/challengeSeven");
 // const challengeEight = require("./api/challengeEight");
-const challengeNine = require("./api/challengeNine");
+// const challengeNine = require("./api/challengeNine");
+const challengeEleven = require("./api/challengeEleven");
 const main = require("./api/main");
 
 app.use("/one", challengeOne);
@@ -39,7 +42,8 @@ app.use("/four", challengeFour);
 // app.use("/six", challengeSix);
 // app.use("/seven", challengeSeven);
 // app.use("/eight", challengeEight);
-app.use("/nine", challengeNine);
+// app.use("/nine", challengeNine);
+app.use("/eleven", challengeEleven);
 app.use("/", main);
 
 exports.api = functions.https.onRequest(app);
@@ -89,3 +93,21 @@ exports.taskEight = functions.pubsub
   .timeZone(tz)
   .onRun(tasks.taskEightHandler);
 //+++++++++++++++++++++++++++++++Challenge Two - The Scheduler app++++++++++++++++++++++
+
+//++++++++++++++++++++++++++++Challenge Eleven++++++++++++++++++++++++++++++++++++++++++
+
+exports.onRequestCreated = functions.firestore
+  .document("northpole_inc/{requestID}")
+  .onCreate((snap, context) => {
+    // Get the note document
+    const request = snap.data();
+
+    // Add an 'objectID' field which Algolia requires
+    request.objectID = context.params.requestID;
+
+    // Write to the algolia index
+    const index = algoliaAdminClient.initIndex(ALGOLIA_INDEX_NAME);
+    return index.saveObject(request);
+  });
+
+//++++++++++++++++++++++++++++Challenge Eleven++++++++++++++++++++++++++++++++++++++++++
